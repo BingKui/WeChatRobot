@@ -1,0 +1,28 @@
+{
+  "name": "wechatrobot",
+  "version": "1.0.0",
+  "description": "微信聊天机器人",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "node robot.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BingKui/WeChatRobot.git"
+  },
+  "keywords": [
+    "WeChat",
+    "robot"
+  ],
+  "author": "康兵奎",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/BingKui/WeChatRobot/issues"
+  },
+  "homepage": "https://github.com/BingKui/WeChatRobot#readme",
+  "dependencies": {
+    "qrcode-terminal": "^0.12.0",
+    "wechaty": "^0.14.1"
+  }
+}
