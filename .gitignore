@@ -57,3 +57,5 @@ typings/
 # dotenv environment variables file
 .env
 
+# temp 聊天记录
+temp/*
