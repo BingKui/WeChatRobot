@@ -6,7 +6,9 @@ const {
     saveChatInfo,
     saveLoginInfo,
     randowNum,
-    checkAtRobot
+    checkAtRobot,
+    getWeather,
+    getJoke
  } = require('./utils');
 
 // 实例化对象
@@ -66,24 +68,40 @@ chat.on('scan', (url, code) => {
     const isSettingRoom = knowledgeFile.group.indexOf(_name) > -1;
     const isAtRobot = checkAtRobot(userName, content);
     // 判断聊天房间
-    if (isSettingRoom) {
-        if (isAtRobot) {
-            // 自定义关键词回复，当被 @ 的时候触发
-            _data.map(item => {
-                bindKnowledgeAnswer(m, content, item.keyword, item.answer, () => {
-                    isSend = true;
-                });
+    if (isAtRobot && isSettingRoom) {
+        // 自定义关键词回复，当被 @ 的时候触发
+        _data.map(item => {
+            bindKnowledgeAnswer(m, content, item.keyword, item.answer, () => {
+                isSend = true;
+            });
+        });
+        // 天气预报
+        if (content.indexOf('天气') > -1) {
+            isSend = true;
+            const city = (content.split(' ')[1]).split('的')[0];
+            getWeather(city, (data) => {
+                m.say(`目前杭州\n天气：${data.weather}\n气温：${data.temperature}℃\n发布时间：${data.date}`);
             });
         }
+        // 笑话
+        if (content.indexOf('笑话') > -1) {
+            isSend = true;
+            getJoke((data) => {
+                m.say(data);
+            });
+        }
+        
+        if (!isSend) {
+            m.say(`你的意思我不太理解！`);
+        }
+    }
+    if (isSettingRoom) {
         // 警告全群监听，只要有人说就监听
         _warn.map(item => {
             bindKnowledgeAnswer(m, content, item, knowledgeFile.warn.answer, () => {
                 isSend = true;
             });
         });
-        if (!isSend) {
-            m.say(`你的意思我不太理解！`);
-        }
     }
 })
 

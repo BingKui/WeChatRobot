@@ -1,5 +1,9 @@
 const fs = require('fs');
 const { robotSuffix } = require('./config');
+const axios = require('axios');
+const pinyin = require("pinyin");
+const { weatherAPIKey, weatherUrl } = require('./config');
+
 const logger = (...args) => {
     console.log(args);
 }
@@ -48,11 +52,44 @@ const randomNum = (n) => {
     return Math.floor(_num);
 }
 
+const getWeather = (city, callback) => {
+    const _city = pinyin('杭州', {
+            style: pinyin['STYLE_NORMAL']
+        }).join('');
+    axios.get(`${weatherUrl}&key=${weatherAPIKey}&location=${_city}`)
+        .then(function (response) {
+            const data = response.data.results[0].now;
+            const time = response.data.results[0].last_update;
+            const _return = {
+                weather: data.text,
+                temperature: data.temperature,
+                date: (new Date(time)).toLocaleString()
+            };
+            callback && callback(_return);
+        })
+        .catch(function (error) {
+            console.log(error);
+        });
+}
+
+const getJoke = (callback) => {
+    axios.get('http://v.juhe.cn/joke/randJoke.php?&type=&key=f465821c2906a83971b89619b59ff5fb')
+    .then(function (response) {
+        const _data = response.data.result[2].content;
+        callback && callback(_data);
+    })
+    .catch(function (error) {
+        console.log(error);
+    });
+}
+
 module.exports = {
     logger,
     bindKnowledgeAnswer,
     saveChatInfo,
     randomNum,
     saveLoginInfo,
-    checkAtRobot
+    checkAtRobot,
+    getWeather,
+    getJoke
 }
