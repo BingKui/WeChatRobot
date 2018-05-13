@@ -8,7 +8,8 @@ const {
     randowNum,
     checkAtRobot,
     getWeather,
-    getJoke
+    getJoke,
+    questionAndAnswer
  } = require('./utils');
 
 // 实例化对象
@@ -90,7 +91,15 @@ chat.on('scan', (url, code) => {
                 m.say(data);
             });
         }
-        
+        // 问答
+        if (content.indexOf('?') > -1 || content.indexOf('？') > -1) {
+            const _r = content.indexOf('?') > -1 ? '?' : '？';
+            isSend = true;
+            const question = (content.split(' ')[1]).split(_r)[0];
+            questionAndAnswer(question, (data) => {
+                m.say(data);
+            });
+        }
         if (!isSend) {
             m.say(`你的意思我不太理解！`);
         }

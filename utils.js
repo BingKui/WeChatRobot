@@ -83,6 +83,18 @@ const getJoke = (callback) => {
     });
 }
 
+const questionAndAnswer = (question, callback) => {
+    console.log("问题是：", question);
+    const _url = encodeURI(`http://op.juhe.cn/robot/index?&info=${question}dtype=json&loc=&userid=&key=1dde1252284a744543bb50b90b1b1f02`);
+    axios.get(_url).then(function (response) {
+        const _data = response.data.result.text;
+        callback && callback(_data);
+    }).catch(function (error) {
+        console.log(error);
+    });
+
+}
+
 module.exports = {
     logger,
     bindKnowledgeAnswer,
@@ -91,5 +103,6 @@ module.exports = {
     saveLoginInfo,
     checkAtRobot,
     getWeather,
-    getJoke
+    getJoke,
+    questionAndAnswer
 }
