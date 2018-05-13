@@ -1,7 +1,7 @@
 {
     "group": ["一个人的群聊"],
     "knowledge": [{
-        "keyword": "能干什么",
+        "keyword": "你能干什么",
         "answer": "你可以这样命令我：1.讲个笑话\n2.杭州的天气"
     }, {
         "keyword": "呵呵",

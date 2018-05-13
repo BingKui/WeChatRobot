@@ -9,7 +9,8 @@ const {
     checkAtRobot,
     getWeather,
     getJoke,
-    questionAndAnswer
+    questionAndAnswer,
+    returnSpace
  } = require('./utils');
 
 // 实例化对象
@@ -68,8 +69,10 @@ chat.on('scan', (url, code) => {
     }
     const isSettingRoom = knowledgeFile.group.indexOf(_name) > -1;
     const isAtRobot = checkAtRobot(userName, content);
+    const _space = returnSpace(content);
     // 判断聊天房间
     if (isAtRobot && isSettingRoom) {
+        console.log('--------start--------');
         // 自定义关键词回复，当被 @ 的时候触发
         _data.map(item => {
             bindKnowledgeAnswer(m, content, item.keyword, item.answer, () => {
@@ -79,7 +82,7 @@ chat.on('scan', (url, code) => {
         // 天气预报
         if (content.indexOf('天气') > -1) {
             isSend = true;
-            const city = (content.split(' ')[1]).split('的')[0];
+            const city = (content.split(_space)[1]).split('的')[0];
             getWeather(city, (data) => {
                 m.say(`目前杭州\n天气：${data.weather}\n气温：${data.temperature}℃\n发布时间：${data.date}`);
             });
@@ -95,7 +98,7 @@ chat.on('scan', (url, code) => {
         if (content.indexOf('?') > -1 || content.indexOf('？') > -1) {
             const _r = content.indexOf('?') > -1 ? '?' : '？';
             isSend = true;
-            const question = (content.split(' ')[1]).split(_r)[0];
+            const question = (content.split(_space)[1]).split(_r)[0];
             questionAndAnswer(question, (data) => {
                 m.say(data);
             });

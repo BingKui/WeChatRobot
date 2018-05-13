@@ -36,12 +36,18 @@ const checkAtRobot = (username, content) => {
     let flag = false;
     const isAt = /\@/g.test(content);
     if (isAt) {
-        const _username = (content.split('@')[1]).split(' ')[0];
+        const _space = returnSpace(content);
+        const _username = (content.split('@')[1]).split(_space)[0];
         if (username === _username) {
             flag = true;
         }
     }
     return flag;
+}
+
+const returnSpace = (con) => {
+    const _str = con.split('@')[1];
+    return _str.indexOf(' ') > -1 ? ' ' : ' ';
 }
 
 const randomNum = (n) => {
@@ -104,5 +110,6 @@ module.exports = {
     checkAtRobot,
     getWeather,
     getJoke,
-    questionAndAnswer
+    questionAndAnswer,
+    returnSpace
 }
