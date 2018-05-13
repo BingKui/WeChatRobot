@@ -4,8 +4,7 @@
   "description": "微信聊天机器人",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "dev": "node robot.js"
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",

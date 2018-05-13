@@ -42,7 +42,6 @@ chat.on('scan', (url, code) => {
     if (request) {
         await request.accept()
         logger(`联系人: ${contact.name()} \n好友请求信息： ${request.hello}`)
-        logger('---------------------------------------');
     }
 })
 
@@ -62,7 +61,8 @@ chat.on('scan', (url, code) => {
         saveChatInfo(room.topic(), _info);
     } else {
         logger(`联系人: ${_userName} \n消息内容: ${content}`)
-        logger('---------------------------------------');
+        const _info = `${_userName}：${content}`;
+        saveChatInfo(_userName, _info);
     }
     //  自己发送的消息，直接返回
     if (m.self()) {
@@ -70,10 +70,9 @@ chat.on('scan', (url, code) => {
     }
     const isSettingRoom = groupList.indexOf(_name) > -1;
     const isAtRobot = checkAtRobot(userName, content);
-    const _space = returnSpace(content);
     // 判断聊天房间
     if (isAtRobot && isSettingRoom) {
-        console.log('--------start--------');
+        const _space = returnSpace(content);
         // 自定义关键词回复，当被 @ 的时候触发
         _data.map(item => {
             bindKnowledgeAnswer(m, content, item.keyword, item.answer, () => {
