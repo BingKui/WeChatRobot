@@ -1,0 +1,74 @@
+_：@Robot.K 杭州的天气
+_：@Robot.K 杭州的天气
+_：@Robot.K  11
+_：@Robot.K 333
+_：@Robot.K ss
+_：sdf
+_：sdf
+Robot.K：Just 
+_：sdf
+Robot.K：Mom
+_：@Robot eee
+_：@Robot 22
+_：@Robot 1
+_：@Robot 1
+_：@Robot q
+Robot：你的意思我不太理解！
+_：@Robot n
+Robot：你的意思我不太理解！
+_：@Robot 杭州的天气
+_：@Robot 杭州的天气
+_：@Robot 杭州的天气
+Robot：目前杭州<br>天气：多云<br>气温：28℃<br>发布时间：2018-5-13 12:45:00
+_：@Robot 你感觉复仇者联盟怎么样？
+Robot：冤冤相报何时了。
+_：@Robot 呵呵？
+Robot：呵呵哒<img class="qqemoji qqemoji109" text="[皱眉]_web" src="/zh_CN/htmledition/v2/images/spacer.gif" />
+Robot：恩　然后呢
+_：@Robot 呵呵
+Robot：呵呵哒<img class="qqemoji qqemoji109" text="[皱眉]_web" src="/zh_CN/htmledition/v2/images/spacer.gif" />
+_：@Robot 你感觉百应怎么样？
+Robot：还是随时都保持一个好心情才是最棒的。
+_：@Robot 加班你怎么看？
+Robot：给楼主挽尊
+_：@Robot 加班你怎么看？
+Robot：真是辛苦了。
+_：@Robot 加班你怎么看？
+Robot：真是辛苦了。
+_：@Robot 讲个笑话
+Robot：一哥们结婚了，新娘是一个护士MM，一天我问那哥们：你为什么喜欢她，难道是因为她漂亮?他扶了扶眼睛，很认真地说：小时侯我经常生病，每次那些护士姐姐们都会用针扎我，我就发誓，我长大以后一定要扎回来。
+_：@Robot 杭州的天气
+Robot：目前杭州<br>天气：多云<br>气温：27℃<br>发布时间：2018-5-13 18:55:00
+_：来啊丶互相伤害
+_：@Robot 讲个笑话调节一下
+Robot：‍‍中午打电话给家里。 我：“妈，我去济南见完同学就回家，应该腊月27或者28到家。” “你自己回来啊？不管你，愿意什么时候回来什么时候回来，还有事儿不？没事儿挂了，耽误我睡觉。”‍‍
+_：gugj
+_：个泼妇你
+_：测试
+_：@Robot 111
+Robot：你的意思我不太理解！
+_：@Robot 还在吗？
+Robot：已经出了
+_：ok
+_：@Robot 你好
+Robot：你的意思我不太理解！
+_：@Robot 讲个笑话
+Robot：少年时的爱情最单纯，那时喜欢一个人，不会去看对方口袋里有多少零花钱，不会去关注对方身上穿的什么牌子，不会去打听对方家里住着多大的房子，不会去查对方的成绩好坏。。。那时候的感情没那么多杂质，只看长相。
+_：@Robot 杭州的天气
+Robot：目前杭州<br>天气：多云<br>气温：25℃<br>发布时间：2018-5-13 22:35:00
+_：@Robot 你感觉Google怎么样？
+Robot：感觉一般都会受很多因素的影响。
+_：@Robot Google？
+Robot：我不会说英语的啦，你还是说中文吧。
+_：@Robot 谷歌怎么样？
+Robot：你觉得谷歌和百度的搜索引擎哪个好用？
+_：@Robot 呵呵
+Robot：呵呵哒<img class="qqemoji qqemoji109" text="[皱眉]_web" src="/zh_CN/htmledition/v2/images/spacer.gif" />
+_：@Robot 发讲个表情
+Robot：你的意思我不太理解！
+_：@Robot 发几个表情
+Robot：<img class="qqemoji qqemoji107" text="[奸笑]_web" src="/zh_CN/htmledition/v2/images/spacer.gif" /><img class="qqemoji qqemoji106" text="[捂脸]_web" src="/zh_CN/htmledition/v2/images/spacer.gif" /><img class="qqemoji qqemoji109" text="[皱眉]_web" src="/zh_CN/htmledition/v2/images/spacer.gif" /><img class="qqemoji qqemoji110" text="[耶]_web" src="/zh_CN/htmledition/v2/images/spacer.gif" />
+_：jdjdj
+_：@Robot 呵呵
+Robot：呵呵哒<img class="qqemoji qqemoji109" text="[皱眉]_web" src="/zh_CN/htmledition/v2/images/spacer.gif" />
+Robot：&lt;?xml version="1.0"?&gt;<br/>&lt;msg&gt;<br/>	&lt;img aeskey="7ba5ca35feaa449aa3fd6462ed3fb4d6" encryver="0" cdnthumbaeskey="7ba5ca35feaa449aa3fd6462ed3fb4d6" cdnthumburl="304e02010004473045020100020498176a3902032f56c302049c570d7002045af855c80420323036353135373837364063686174726f6f6d37365f313532363232343332370204010400020201000400" cdnthumblength="6047" cdnthumbheight="120" cdnthumbwidth="99" cdnmidheight="0" cdnmidwidth="0" cdnhdheight="0" cdnhdwidth="0" cdnmidimgurl="304e02010004473045020100020498176a3902032f56c302049c570d7002045af855c80420323036353135373837364063686174726f6f6d37365f313532363232343332370204010400020201000400" length="82063" md5="0ee51cd154d48aac57f0c3c65db471f7" /&gt;<br/>&lt;/msg&gt;<br/>
