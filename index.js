@@ -1,5 +1,6 @@
 const { Wechaty, Room } = require('wechaty');
 const fs = require('fs');
+const { groupList } = require('./config');
 const {
     bindKnowledgeAnswer,
     logger,
@@ -67,7 +68,7 @@ chat.on('scan', (url, code) => {
     if (m.self()) {
         return
     }
-    const isSettingRoom = knowledgeFile.group.indexOf(_name) > -1;
+    const isSettingRoom = groupList.indexOf(_name) > -1;
     const isAtRobot = checkAtRobot(userName, content);
     const _space = returnSpace(content);
     // 判断聊天房间

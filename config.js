@@ -1,5 +1,6 @@
 // 保存项目的一些配置信息，方便修改
 module.exports = {
+    groupList: ["一个人的群聊", "年轻人"],
     robotSuffix: '🤖',
     // 心知天气API密钥
     weatherAPIKey: 'rjpchbvb5bdfx0yo',
