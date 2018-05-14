@@ -100,17 +100,37 @@ const questionAndAnswer = (question, callback) => {
     });
 
 }
-
+// 获取百度AI的 AccessToken，如果失效则重新获取
 const getBaiduAccessToken = (callback) => {
-    const url = 'https://aip.baidubce.com/oauth/2.0/token';
-    const param = qs.stringify({
-        grant_type: 'client_credentials',
-        client_id: baiduApiKey,
-        client_secret: baiduSecretKey
-    });
-    axios.post(`${url}?${param}`).then((response) => {
-        console.log(response.data);
-    }).catch()
+    const { accessToken, indate } = require('./token/accessToken');
+    const now = dayjs();
+    const _falg = now.valueOf < indate;
+    if (accessToken && _falg) {
+        callback && callback(accessToken);
+    } else {
+        const url = 'https://aip.baidubce.com/oauth/2.0/token';
+        const param = qs.stringify({
+            grant_type: 'client_credentials',
+            client_id: baiduApiKey,
+            client_secret: baiduSecretKey
+        });
+        axios.post(`${url}?${param}`).then((response) => {
+            const _res = response.data;
+            callback && callback(_res.access_token);
+            const _days = _res.expires_in / 3600 / 24;
+            const _indate = now.add(_days, 'day').valueOf();
+            const content = `module.exports = {
+                accessToken: '${_res.access_token}',
+                indate: ${_indate}
+            }`;
+            fs.writeFile('token/accessToken.js', content, 'utf-8', (err) => {
+                if (err) throw err;
+                console.log('新AccessToken已保存。');
+            });
+        }).catch((err) => {
+            console.log(err);
+        })
+    }
 }
 
 module.exports = {
