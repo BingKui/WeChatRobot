@@ -1,8 +1,8 @@
 const fs = require('fs');
-const { robotSuffix } = require('./config');
 const axios = require('axios');
 const pinyin = require("pinyin");
-const { weatherAPIKey, weatherUrl } = require('./config');
+const qs = require('querystring')
+const { weatherAPIKey, weatherUrl, baiduApiKey, baiduSecretKey } = require('./config');
 
 const logger = (...args) => {
     console.log(args);
@@ -99,6 +99,18 @@ const questionAndAnswer = (question, callback) => {
         console.log(error);
     });
 
+}
+
+const getBaiduAccessToken = (callback) => {
+    const url = 'https://aip.baidubce.com/oauth/2.0/token';
+    const param = qs.stringify({
+        grant_type: 'client_credentials',
+        client_id: baiduApiKey,
+        client_secret: baiduSecretKey
+    });
+    axios.post(`${url}?${param}`).then((response) => {
+        console.log(response.data);
+    }).catch()
 }
 
 module.exports = {
