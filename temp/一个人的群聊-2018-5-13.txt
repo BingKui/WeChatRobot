@@ -72,3 +72,7 @@ _：jdjdj
 _：@Robot 呵呵
 Robot：呵呵哒<img class="qqemoji qqemoji109" text="[皱眉]_web" src="/zh_CN/htmledition/v2/images/spacer.gif" />
 Robot：&lt;?xml version="1.0"?&gt;<br/>&lt;msg&gt;<br/>	&lt;img aeskey="7ba5ca35feaa449aa3fd6462ed3fb4d6" encryver="0" cdnthumbaeskey="7ba5ca35feaa449aa3fd6462ed3fb4d6" cdnthumburl="304e02010004473045020100020498176a3902032f56c302049c570d7002045af855c80420323036353135373837364063686174726f6f6d37365f313532363232343332370204010400020201000400" cdnthumblength="6047" cdnthumbheight="120" cdnthumbwidth="99" cdnmidheight="0" cdnmidwidth="0" cdnhdheight="0" cdnhdwidth="0" cdnmidimgurl="304e02010004473045020100020498176a3902032f56c302049c570d7002045af855c80420323036353135373837364063686174726f6f6d37365f313532363232343332370204010400020201000400" length="82063" md5="0ee51cd154d48aac57f0c3c65db471f7" /&gt;<br/>&lt;/msg&gt;<br/>
+_：@Robot hehe
+Robot：你的意思我不太理解！
+_：靠
+Robot：请文明用语，谢谢！！！ -- AI Robot
