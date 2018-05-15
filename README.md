@@ -62,4 +62,4 @@ knowledge：保存知识库资料，后期支持多个知识库切换.
 
 token：保存百度AI的 Access Token 
 
-## [更新日志](./updatelog.md)
+## [更新日志](./updatelog.md)
