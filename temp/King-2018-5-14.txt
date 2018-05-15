@@ -1,4 +1,0 @@
-King：你已添加了King，现在可以开始聊天了。
-King：小康？
-King：@robot
-King：@Robot 你好

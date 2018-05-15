@@ -2,7 +2,8 @@ const fs = require('fs');
 const axios = require('axios');
 const pinyin = require("pinyin");
 const qs = require('querystring')
-const { weatherAPIKey, weatherUrl, baiduApiKey, baiduSecretKey } = require('./config');
+const { weatherAPIKey, baiduApiKey, baiduSecretKey, jokeKey, qAndAKey } = require('./config');
+const LinkUrl = require('./url');
 
 const logger = (...args) => {
     console.log(args);
@@ -59,10 +60,10 @@ const randomNum = (n) => {
 }
 
 const getWeather = (city, callback) => {
-    const _city = pinyin('杭州', {
+    const _city = pinyin(city, {
             style: pinyin['STYLE_NORMAL']
         }).join('');
-    axios.get(`${weatherUrl}&key=${weatherAPIKey}&location=${_city}`)
+    axios.get(`${LinkUrl.weatherUrl}&key=${weatherAPIKey}&location=${_city}`)
         .then(function (response) {
             const data = response.data.results[0].now;
             const time = response.data.results[0].last_update;
@@ -79,7 +80,7 @@ const getWeather = (city, callback) => {
 }
 
 const getJoke = (callback) => {
-    axios.get('http://v.juhe.cn/joke/randJoke.php?&type=&key=f465821c2906a83971b89619b59ff5fb')
+    axios.get(`${LinkUrl.jokeUrl}${jokeKey}`)
     .then(function (response) {
         const _data = response.data.result[2].content;
         callback && callback(_data);
@@ -90,8 +91,7 @@ const getJoke = (callback) => {
 }
 
 const questionAndAnswer = (question, callback) => {
-    console.log("问题是：", question);
-    const _url = encodeURI(`http://op.juhe.cn/robot/index?&info=${question}dtype=json&loc=&userid=&key=1dde1252284a744543bb50b90b1b1f02`);
+    const _url = encodeURI(`${LinkUrl.qAndAUrl}?&info=${question}dtype=json&loc=&userid=&key=${qAndAKey}`);
     axios.get(_url).then(function (response) {
         const _data = response.data.result.text;
         callback && callback(_data);
@@ -108,13 +108,12 @@ const getBaiduAccessToken = (callback) => {
     if (accessToken && _falg) {
         callback && callback(accessToken);
     } else {
-        const url = 'https://aip.baidubce.com/oauth/2.0/token';
         const param = qs.stringify({
             grant_type: 'client_credentials',
             client_id: baiduApiKey,
             client_secret: baiduSecretKey
         });
-        axios.post(`${url}?${param}`).then((response) => {
+        axios.post(`${LinkUrl.accessTokenUrl}?${param}`).then((response) => {
             const _res = response.data;
             callback && callback(_res.access_token);
             const _days = _res.expires_in / 3600 / 24;
@@ -143,5 +142,6 @@ module.exports = {
     getWeather,
     getJoke,
     questionAndAnswer,
-    returnSpace
+    returnSpace,
+    getBaiduAccessToken
 }

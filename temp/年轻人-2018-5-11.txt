@@ -1,36 +1,0 @@
-C@L：就你能
-C@L：你的新作品吗？@_ 
-_：你的意思我不太理解！
-Big  boss：周末参加校庆
-_：你的意思我不太理解！
-无缺：<img class="qqemoji qqemoji106" text="[捂脸]_web" src="/zh_CN/htmledition/v2/images/spacer.gif" /><img class="qqemoji qqemoji106" text="[捂脸]_web" src="/zh_CN/htmledition/v2/images/spacer.gif" />
-_：你的意思我不太理解！
-_：测试一下机器人
-光头：机器人
-_：你的意思我不太理解！
-无缺：你的机器人有毒
-_：你的意思我不太理解！
-C@L：数心总监可以的
-_：你的意思我不太理解！
-光头：你是谁
-_：你的意思我不太理解！
-Robot.K：@_ 杭州的天气
-_：目前杭州<br>天气：晴<br>气温：26℃<br>发布时间：2018-5-11 21:35:00
-无缺：还有踢人等功能
-Robot.K：@_ 讲个笑话
-_：我问儿子：“给爸爸打电话没有，晚上回家吃饭不？”<br>他说：“我给爸爸打电话，是一个阿姨接的。”<br>我心里一沉，不高兴了。<br>儿子继续说：“阿姨说了：‘您拨打的电话正在通话中，请稍后再拨。’”
-无缺：搞点新鲜的<img class="qqemoji qqemoji107" text="[奸笑]_web" src="/zh_CN/htmledition/v2/images/spacer.gif" />
-_：不要慌，慢慢来
-无缺：他搞得是图灵机器人
-Robot.K：@_ 能干什么
-_：你可以这样命令我：1.讲个笑话<br>2.杭州的天气
-_：功能有点简陋
-无缺：@b06d4f601a07837f850ab5f476d47e5f0c509c79ff51bf002f4a2c49400470916b22c908527025d4aba164bda3e6905f5ca22e4d943583f1d4488a5cb1e9fe2303de4f43ed309d9840d4d6da12124fa8c0f473d7ad823291e522a36dfeb653b2b4ca72f1fc9bd6ff3c182b2338ecb4e279f413a43dc34c161cc4f034bdd44ef05777fe3b66dcb2b748763be83d919f86d5a3805c5d7b4be34f2b97ad57decf3b33e8de10a00f8f005e1c014aaf5c0f0fdf09a4d06fd33a99ee676a4a6757fe231e2103c2d3a95fb9b7e1a59de8890b22c549e99810f8ddfc03b2f32fe6bfde34a85d89ac04663c34a6fd83ac41c5d9fd4a9a3a0039e52970ec4426b06ad9e00de6837ca6bd0f01885fc13c619d29addb174d59966f2fc03cfe3d24026629742e548283b9f43677d2eb24e54f3472c46e15c130157e234148c15dacc35db33032c820f4ab8baa9414450a04d7217f3ed1756d23131712bd0305a0c029b74eafb76301750db864eac175907f014c67e63519157aa8a09bd21dcb5ddaa304beba7c5b0915875c8248cde62b2a2f758126ca47ec9554de5b7b3221b863be244710d0056f04e6e7afef7a4d246df84723d48458e722890415f0abfc0ddc4d4ce434a528ffc57634341ca7b4fc47810eca5625e745d9239355c676bbdaa0c7e241433b96c65390ed02637af047a199f7a964a98957db370298e28f93ea06ed45880eae31782df15d99c1871b26e22d68c45e4563939ed9cb34b8c92c16b65b5a467e3751e1d66a16acd2b57b78b7ce4fec07d8aaad8d7fb45c4398744127b5a7bda2cb38104fdf003a85cc958490f3c7468cf012846c940a3d61b4dd490f5614da368ac1be12594b0b63df97bb1088a2fb2bca0a79f120044b5d8aac790bdefb7eade1439c0b31b5230701f7de4a1eb89367d9bb9015ce6661bfd27e2d88745e8a54803fa615782fe2999d2aad9340780d82e5
-无缺：给你看看<img class="qqemoji qqemoji107" text="[奸笑]_web" src="/zh_CN/htmledition/v2/images/spacer.gif" />
-_：ok
-_：测试到此结束
-无缺：<img class="qqemoji qqemoji21" text="[愉快]_web" src="/zh_CN/htmledition/v2/images/spacer.gif" />
-午后阳光：&lt;msg&gt;&lt;appmsg appid="wx71ba15d13be4f76f" sdkver="0"&gt;&lt;title&gt;&lt;/title&gt;&lt;des&gt;&lt;/des&gt;&lt;username&gt;&lt;/username&gt;&lt;action&gt;view&lt;/action&gt;&lt;type&gt;8&lt;/type&gt;&lt;showtype&gt;0&lt;/showtype&gt;&lt;content&gt;&lt;/content&gt;&lt;url&gt;&lt;/url&gt;&lt;lowurl&gt;&lt;/lowurl&gt;&lt;dataurl&gt;&lt;/dataurl&gt;&lt;lowdataurl&gt;&lt;/lowdataurl&gt;&lt;contentattr&gt;0&lt;/contentattr&gt;&lt;streamvideo&gt;&lt;streamvideourl&gt;&lt;/streamvideourl&gt;&lt;streamvideototaltime&gt;0&lt;/streamvideototaltime&gt;&lt;streamvideotitle&gt;&lt;/streamvideotitle&gt;&lt;streamvideowording&gt;&lt;/streamvideowording&gt;&lt;streamvideoweburl&gt;&lt;/streamvideoweburl&gt;&lt;streamvideothumburl&gt;&lt;/streamvideothumburl&gt;&lt;streamvideoaduxinfo&gt;&lt;/streamvideoaduxinfo&gt;&lt;streamvideopublishid&gt;&lt;/streamvideopublishid&gt;&lt;/streamvideo&gt;&lt;canvasPageItem&gt;&lt;canvasPageXml&gt;&lt;![CDATA[]]&gt;&lt;/canvasPageXml&gt;&lt;/canvasPageItem&gt;&lt;appattach&gt;&lt;totallen&gt;448701&lt;/totallen&gt;&lt;attachid&gt;0:0:b6e6145f50714b03e9058f41786ea844&lt;/attachid&gt;&lt;cdnattachurl&gt;&lt;/cdnattachurl&gt;&lt;emoticonmd5&gt;b6e6145f50714b03e9058f41786ea844&lt;/emoticonmd5&gt;&lt;aeskey&gt;&lt;/aeskey&gt;&lt;fileext&gt;0&lt;/fileext&gt;&lt;islargefilemsg&gt;0&lt;/islargefilemsg&gt;&lt;/appattach&gt;&lt;extinfo&gt;&lt;/extinfo&gt;&lt;androidsource&gt;2&lt;/androidsource&gt;&lt;thumburl&gt;&lt;/thumburl&gt;&lt;mediatagname&gt;&lt;/mediatagname&gt;&lt;messageaction&gt;&lt;![CDATA[]]&gt;&lt;/messageaction&gt;&lt;messageext&gt;&lt;![CDATA[]]&gt;&lt;/messageext&gt;&lt;emoticongift&gt;&lt;packageflag&gt;0&lt;/packageflag&gt;&lt;packageid&gt;&lt;/packageid&gt;&lt;/emoticongift&gt;&lt;emoticonshared&gt;&lt;packageflag&gt;0&lt;/packageflag&gt;&lt;packageid&gt;&lt;/packageid&gt;&lt;/emoticonshared&gt;&lt;designershared&gt;&lt;designeruin&gt;0&lt;/designeruin&gt;&lt;designername&gt;null&lt;/designername&gt;&lt;designerrediretcturl&gt;null&lt;/designerrediretcturl&gt;&lt;/designershared&gt;&lt;emotionpageshared&gt;&lt;tid&gt;0&lt;/tid&gt;&lt;title&gt;null&lt;/title&gt;&lt;desc&gt;null&lt;/desc&gt;&lt;iconUrl&gt;null&lt;/iconUrl&gt;&lt;secondUrl&gt;null&lt;/secondUrl&gt;&lt;pageType&gt;0&lt;/pageType&gt;&lt;/emotionpageshared&gt;&lt;webviewshared&gt;&lt;shareUrlOriginal&gt;&lt;/shareUrlOriginal&gt;&lt;shareUrlOpen&gt;&lt;/shareUrlOpen&gt;&lt;jsAppId&gt;&lt;/jsAppId&gt;&lt;publisherId&gt;&lt;/publisherId&gt;&lt;/webviewshared&gt;&lt;template_id&gt;&lt;/template_id&gt;&lt;md5&gt;&lt;/md5&gt;&lt;weappinfo&gt;&lt;username&gt;&lt;/username&gt;&lt;appid&gt;&lt;/appid&gt;&lt;appservicetype&gt;0&lt;/appservicetype&gt;&lt;/weappinfo&gt;&lt;statextstr&gt;GhQKEnd4NzFiYTE1ZDEzYmU0Zjc2Zg==&lt;/statextstr&gt;&lt;websearch&gt;&lt;rec_category&gt;0&lt;/rec_category&gt;&lt;/websearch&gt;&lt;/appmsg&gt;&lt;fromusername&gt;&lt;/fromusername&gt;&lt;scene&gt;0&lt;/scene&gt;&lt;appinfo&gt;&lt;version&gt;105&lt;/version&gt;&lt;appname&gt;讯飞输入法&lt;/appname&gt;&lt;/appinfo&gt;&lt;commenturl&gt;&lt;/commenturl&gt;&lt;/msg&gt;<br/>
-无缺：可怜的孩子
-_：&lt;?xml version="1.0"?&gt;<br/>&lt;msg&gt;<br/>	&lt;img aeskey="cf43232b8203401681e604202f800353" encryver="0" cdnthumbaeskey="cf43232b8203401681e604202f800353" cdnthumburl="30500201000449304702010002042c6ea4ca02032f56c3020465570d7002045af5b38e0422393638353939383433344063686174726f6f6d363332305f313532363035313732360204010400020201000400" cdnthumblength="3669" cdnthumbheight="120" cdnthumbwidth="67" cdnmidheight="0" cdnmidwidth="0" cdnhdheight="0" cdnhdwidth="0" cdnmidimgurl="30500201000449304702010002042c6ea4ca02032f56c3020465570d7002045af5b38e0422393638353939383433344063686174726f6f6d363332305f313532363035313732360204010400020201000400" length="104924" md5="c24090436b3446c4d559cf76fabab0a0" /&gt;<br/>&lt;/msg&gt;<br/>
-_：我的机器人又多了个问答功能
