@@ -71,8 +71,8 @@ chat.on('scan', (url, code) => {
     const isSettingRoom = groupList.indexOf(_name) > -1;
     const isAtRobot = checkAtRobot(userName, content);
     // 判断聊天房间
-    // if (isAtRobot && isSettingRoom) {
-    if (isAtRobot) {
+    if (isAtRobot && isSettingRoom) {
+    // if (isAtRobot) {
         const _space = returnSpace(content);
         // 自定义关键词回复，当被 @ 的时候触发
         _data.map(item => {
@@ -108,14 +108,14 @@ chat.on('scan', (url, code) => {
             m.say(`你的意思我不太理解！`);
         }
     }
-    // if (isSettingRoom) {
-    // 警告全群监听，只要有人说就监听
-    _warn.map(item => {
-        bindKnowledgeAnswer(m, content, item, knowledgeFile.warn.answer, () => {
-            isSend = true;
+    if (isSettingRoom) {
+        // 警告全群监听，只要有人说就监听
+        _warn.map(item => {
+            bindKnowledgeAnswer(m, content, item, knowledgeFile.warn.answer, () => {
+                isSend = true;
+            });
         });
-    });
-    // }
+    }
 })
 
 
