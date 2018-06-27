@@ -1,6 +1,6 @@
 const { Wechaty, Room } = require('wechaty');
 const fs = require('fs');
-const { groupList } = require('./config');
+const { groupList } = require('./tools/config');
 const {
     bindKnowledgeAnswer,
     logger,
@@ -12,7 +12,7 @@ const {
     getJoke,
     questionAndAnswer,
     returnSpace
- } = require('./utils');
+ } = require('./tools/utils');
 
 // 实例化对象
 const chat = Wechaty.instance();

@@ -1,6 +1,6 @@
 {
   "name": "wechatrobot",
-  "version": "1.0.0",
+  "version": "0.2.0",
   "description": "微信聊天机器人",
   "main": "index.js",
   "scripts": {
@@ -24,8 +24,10 @@
     "axios": "^0.18.0",
     "dayjs": "^1.5.24",
     "iconv-lite": "^0.4.23",
+    "log4js": "^2.10.0",
+    "mongolass": "^4.3.4",
     "pinyin": "^2.8.3",
     "qrcode-terminal": "^0.12.0",
-    "wechaty": "^0.14.1"
+    "wechaty": "^0.16.5"
   }
 }
