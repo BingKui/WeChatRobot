@@ -4,6 +4,12 @@ module.exports = {
     groupList: ["一个人的群聊", "年轻人"],
     // 机器人回复前缀
     robotSuffix: '🤖',
+    // 是否根据星期修改头像，默认关闭
+    changeAvatar: false,
+    // 个人天气推送
+    weatherPerson: false,
+    // 群天气推送
+    weatherRoom: false,
     // 数据库地址
     mongoDB: 'mongodb://localhost:20217/wechatrobot',
     // log4js 配置

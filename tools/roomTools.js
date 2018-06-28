@@ -47,9 +47,12 @@ const roomMemberListInfo = async (room) => {
 }
 /**
  * @description 通过字符串查询群聊是否存在某人
+ * @param {Room} room 群对象
+ * @param {Robot} bot 机器人对象
+ * @param {string} query 需要查询的用户条件
  */
-const roomHasPeople = async (room, bot, str) => {
-    const contact = await bot.Contact.find(str);
+const roomHasPeople = async (room, bot, query) => {
+    const contact = await bot.Contact.find(query);
     let result = false;
     if (contact) {
         result = await room.has(contact);
