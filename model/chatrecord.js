@@ -13,3 +13,7 @@ const ChatRecordSchema = new Schema({
     date: Date,
     memtionList: [String],
 });
+
+const ChatRecordModel = mongoose.model('chatrecord', ChatRecordSchema);
+
+module.exports = ChatRecordModel;
