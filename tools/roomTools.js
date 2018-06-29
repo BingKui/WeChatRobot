@@ -32,7 +32,7 @@ const roomInfo = async (room) => {
  *      contactAlias: ''
  * }
  */
-const roomMeberInfo = async (room, query) => {
+const roomMemberInfo = async (room, query) => {
     const member = await room.member(query);
     return await contactInfo(member);
 }
@@ -64,6 +64,6 @@ const roomHasPeople = async (room, bot, query) => {
 module.export = {
     roomInfo,
     roomHasPeople,
-    roomMeberInfo,
+    roomMemberInfo,
     roomMemberListInfo
 };

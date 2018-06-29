@@ -6,7 +6,7 @@ const { avatarImg } = require('../tools/assetTools.js');
  * @description 定时每天的 00：01：00 执行修改头像的任务
  * @param {Contact} contact 登录的用户对象
  */
-const changeAvatar = (contact) => {
+const avatarAutoChange = (contact) => {
     schedule.scheduleJob('0 1 0 * * *', () => {
         const avatarFile = avatarImg();
         try {
@@ -17,4 +17,4 @@ const changeAvatar = (contact) => {
     });
 }
 
-module.export = changeAvatar;
+module.export = avatarAutoChange;

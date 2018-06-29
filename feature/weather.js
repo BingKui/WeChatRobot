@@ -10,11 +10,11 @@ const { weatherAPIKey } = require('../tools/config.js');
  * @param {Contact} contact 开启推送的用户
  * @param {string} city 需要推送的城市名称
  */
-const pushWeather = (contact, city) => {
+const weatherAutoPush = (contact, city) => {
     Schedule.scheduleJob('0 30 9 * * *', async () => {
         // 推送天气
-        const weatherInfo = await getWeather(city);
-        const msg = createWeatherMsg(weatherInfo);
+        const weatherInfo = await weatherInfo(city);
+        const msg = weatherMessage(weatherInfo);
         await contact.say(msg);
     });
 }
@@ -24,7 +24,7 @@ const pushWeather = (contact, city) => {
  * @param {WeatherInfo} info 天气信息对象
  * @return {string} 返回天气消息字符串
  */
-const createWeatherMsg = (info) => {
+const weatherMessage = (info) => {
     if (!info) {
         return '获取天气失败';
     }
@@ -36,7 +36,7 @@ const createWeatherMsg = (info) => {
  * @param {string} city 需要获取天气信息的城市名称
  * @return {object} 基本天气信息
  */
-const getWeather = async (city) => {
+const weatherInfo = async (city) => {
     const _city = Pinyin(city, { style: Pinyin['STYLE_NORMAL'] }).join('');
     const res = await Axios.get(`${weatherUrl}&key=${weatherAPIKey}&location=${_city}`);
     console.log(JSON.stringify(res.data));
@@ -56,11 +56,8 @@ const getWeather = async (city) => {
     return result;
 }
 
-// test
-// pushWeather(null, '杭州');
-
 module.exports = {
-    getWeather,
-    pushWeather,
-    createWeatherMsg,
+    weatherInfo,
+    weatherAutoPush,
+    weatherMessage,
 };

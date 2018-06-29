@@ -7,7 +7,7 @@ const { jokeKey } = require('../tools/config.js');
  * @description 获取一个笑话
  * @return {string} 返回一个笑话的内容
  */
-const getJoke = async () => {
+const jokeInfo = async () => {
     const res = await Axios.get(`${jokeUrl}${jokeKey}`);
     let result = '获取笑话失败！';
     if (res) {
@@ -17,5 +17,5 @@ const getJoke = async () => {
 }
 
 module.exports = {
-    getJoke,
+    jokeInfo,
 };
