@@ -2,6 +2,7 @@ const {
     contactInfo,
     contactListInfo,
 } = require('./contactTools.js');
+
 /**
  * @description 获取群聊基本信息
  * @param {Room} room 群对象

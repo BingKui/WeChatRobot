@@ -18,6 +18,7 @@ const contactInfo = async (contact) => {
         type: contactType(contact), // 联系人类型，官方或者个人
         province: contact.province(), // 省份
         city: contact.city(), // 城市
+        isPerson: contactIsPerson(contact), // 是否是个人的标识
     };
 }
 
@@ -36,6 +37,20 @@ const contactType = (contact) => {
         _result = '官方';
     }
     return _result;
+}
+
+/**
+ * @description 判断是否是个人类型的联系人
+ * @param {Contact} contact 联系人对象
+ * @return {boolean} 返回是否是个人，是的话 true，不是 false
+ */
+const contactIsPerson = (contact) => {
+    const type = contact.type();
+    let result = false;
+    if (type === 'Personal') {
+        result = true;
+    }
+    return result;
 }
 
 /**
@@ -69,4 +84,5 @@ module.export = {
     contactInfo,
     contactGender,
     contactListInfo,
+    contactIsPerson,
 };
