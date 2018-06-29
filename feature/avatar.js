@@ -7,7 +7,7 @@ const { avatarImg } = require('../tools/assetTools.js');
  * @param {Contact} contact 登录的用户对象
  */
 const changeAvatar = (contact) => {
-    return schedule.scheduledJobs('0 1 0 * * *', () => {
+    schedule.scheduleJob('0 1 0 * * *', () => {
         const avatarFile = avatarImg();
         try {
             contact.avatar(avatarFile);

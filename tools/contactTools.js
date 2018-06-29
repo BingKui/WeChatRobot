@@ -60,8 +60,8 @@ const contactGender = (contact) => {
  * @param {Array<Contact>} contactList 联系人对象数组
  * @returns {Array<contactInfo>} 返回处理过的用户信息数组
  */
-const contactListInfo = async (contactList = []) => {
-    return contactList.map(item => await contactInfo(item));
+const contactListInfo = (contactList = []) => {
+    return contactList.map(async item => await contactInfo(item));
 }
 
 module.export = {

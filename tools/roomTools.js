@@ -11,11 +11,12 @@ const roomInfo = async (room) => {
     if (!room) {
         return null;
     }
+    const members = await room.memberAll();
     return {
-        name: '', // 群名字
-        announce: '', // 群公告
-        memberNumber: 0, // 群成员数
-        avatar: '', // 群头像图片
+        name: await room.topic(), // 群名字
+        announce: await room.announce(), // 群公告
+        memberNumber: members.length, // 群成员数
+        avatar: await room.avatar(), // 群头像图片
     };
 }
 
@@ -59,24 +60,10 @@ const roomHasPeople = async (room, bot, query) => {
     }
     return result;
 }
-/**
- * @description 获取所有群成员信息
- */
-/**
- * @description 获取所有群成员信息
- */
-/**
- * @description 获取所有群成员信息
- */
-/**
- * @description 获取所有群成员信息
- */
-/**
- * @description 获取所有群成员信息
- */
 
 module.export = {
     roomInfo,
+    roomHasPeople,
     roomMeberInfo,
     roomMemberListInfo
 };

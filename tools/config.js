@@ -6,12 +6,16 @@ module.exports = {
     robotSuffix: '🤖',
     // 是否根据星期修改头像，默认关闭
     changeAvatar: false,
-    // 个人天气推送
+    // 个人天气推送，默认关闭
     weatherPerson: false,
-    // 群天气推送
+    // 群天气推送，默认关闭
     weatherRoom: false,
     // 数据库地址
-    mongoDB: 'mongodb://localhost:20217/wechatrobot',
+    mongoDB: 'mongodb://localhost:27017/wechatrobot',
+    // 是否开启聊天记录存储，默认开启
+    isSaveChatLog: true,
+    // 是否开启消息轰炸功能，默认关闭
+    isOpenMsgBomb: false,
     // log4js 配置
     log4js: {
         "appenders": [{
