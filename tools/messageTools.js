@@ -22,12 +22,25 @@ const messageInfo = async (message) => {
         room, // 群聊房间
         roomInfo: await roomInfo(room), // 群聊房间信息
         type: messageType(message), // 消息类型
-        content: (message.text() || '').replace(/\s+/g, ''), // 消息内容
+        content: messageText(message), // 消息内容
         mention, // 提及用户 list
         mentionInfo: contactListInfo(mention) || [], // 提及用户信息
         date: formatDate(message.date()), // 消息发送时间
         age: message.age(), // 消息的年龄，据当前时间的秒数
     };
+}
+
+/**
+ * @description 处理并返回消息内容
+ * @param {Message} message message 对象
+ * @return {String} 返回处理过的消息内容
+ */
+const messageText = (message) => {
+    if (message) {
+        const text = message.text();
+        return text ? text.replace(/\s+/g, '') : '';
+    }
+    return '';
 }
 
 /**
@@ -86,4 +99,5 @@ module.exports = {
     messageRecord,
     messageRecordInfo,
     messageMention,
+    messageText,
 };

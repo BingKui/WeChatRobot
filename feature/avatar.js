@@ -17,4 +17,4 @@ const avatarAutoChange = (contact) => {
     });
 }
 
-module.export = avatarAutoChange;
+module.exports = avatarAutoChange;

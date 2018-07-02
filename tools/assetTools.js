@@ -27,17 +27,45 @@ const avatarImg = () => {
  * @param {String} foolder 文件夹名称
  * @param {String} name 随机资源类型，默认为 file，用来备注
  */
-const randomFile = (foolder, name = 'file') => {
+const randomFile = (foolder) => {
     const path = `${process.cwd()}/assets/${foolder}`;
     const pathData = readDirData(path);
-    const filename = pathData[randomNum(0, pathData.length - 1)];
-    return FileBox.fromLocal(`${path}/${filename}`, name);
+    let result = '暂时没有相关资源！';
+    if (pathData.length > 0) {
+        const filename = pathData[randomNum(0, pathData.length - 1)];
+        result = FileBox.fromLocal(`${path}/${filename}`);
+    }
+    return result;
 }
 
-const avatarFile = () => {}
+/**
+ * @description 根据消息内容返回相应的资源目录，如果都不匹配返回 false
+ * @param {String} text 消息内容
+ */
+const assetFolder = (text) => {
+    switch (text) {
+        case '头像':
+            return 'avatar';
+        case '图片':
+            return 'image';
+        case '壁纸':
+            return 'wallpaper';
+        case '文档':
+            return 'document';
+        case '朋友圈配图':
+            return 'match';
+        case '视频':
+            return 'video';
+        case '语音':
+            return 'voice';
+        default:
+            return false;
+    }
+}
 
-module.export = {
+module.exports = {
     imgMessage,
     avatarImg,
     randomFile,
+    assetFolder,
 };

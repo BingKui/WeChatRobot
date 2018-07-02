@@ -62,7 +62,7 @@ const roomHasPeople = async (room, bot, query) => {
     return result;
 }
 
-module.export = {
+module.exports = {
     roomInfo,
     roomHasPeople,
     roomMemberInfo,

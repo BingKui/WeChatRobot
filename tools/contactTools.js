@@ -79,7 +79,7 @@ const contactListInfo = (contactList = []) => {
     return contactList.map(async item => await contactInfo(item));
 }
 
-module.export = {
+module.exports = {
     contactType,
     contactInfo,
     contactGender,

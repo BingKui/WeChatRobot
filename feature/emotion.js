@@ -14,6 +14,6 @@ const getEmotionLevel = (m) => {
 
 }
 
-module.export = {
+module.exports = {
 
 };
