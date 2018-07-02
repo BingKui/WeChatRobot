@@ -31,8 +31,18 @@ const readJsonFile = (fileName) => {
     return JSON.parse(fs.readFileSync(`${process.cwd()}/knowledge/${fileName}.json`, { encoding:'utf-8' }));
 }
 
+/**
+ * @description 获取路径下的数据
+ * @param {String} path 路径
+ * @return {Array} 文件列表数组
+ */
+const readDirData = (path) => {
+    return fs.readdirSync(path, { encoding:'utf-8' });
+}
+
 module.exports = {
     formatDate,
     randomNum,
     readJsonFile,
+    readDirData,
 };

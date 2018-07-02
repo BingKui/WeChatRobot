@@ -59,37 +59,6 @@ const randomNum = (n) => {
     return Math.floor(_num);
 }
 
-// const getWeather = (city, callback) => {
-//     const _city = pinyin(city, {
-//             style: pinyin['STYLE_NORMAL']
-//         }).join('');
-//     axios.get(`${LinkUrl.weatherUrl}&key=${weatherAPIKey}&location=${_city}`)
-//         .then(function (response) {
-//             const data = response.data.results[0].now;
-//             const time = response.data.results[0].last_update;
-//             const _return = {
-//                 weather: data.text,
-//                 temperature: data.temperature,
-//                 date: (new Date(time)).toLocaleString()
-//             };
-//             callback && callback(_return);
-//         })
-//         .catch(function (error) {
-//             console.log(error);
-//         });
-// }
-
-// const getJoke = (callback) => {
-//     axios.get(`${LinkUrl.jokeUrl}${jokeKey}`)
-//     .then(function (response) {
-//         const _data = response.data.result[2].content;
-//         callback && callback(_data);
-//     })
-//     .catch(function (error) {
-//         console.log(error);
-//     });
-// }
-
 const questionAndAnswer = (question, callback) => {
     const _url = encodeURI(`${LinkUrl.qAndAUrl}?&info=${question}dtype=json&loc=&userid=&key=${qAndAKey}`);
     axios.get(_url).then(function (response) {
