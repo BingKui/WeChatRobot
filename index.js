@@ -8,8 +8,6 @@ const {
     saveLoginInfo,
     randowNum,
     checkAtRobot,
-    getWeather,
-    getJoke,
     questionAndAnswer,
     returnSpace
  } = require('./tools/utils');

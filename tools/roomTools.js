@@ -24,7 +24,7 @@ const roomInfo = async (room) => {
 /**
  * @description 获取单个群成员信息
  * @param {Room} room 群对象
- * @param {string | filter} query 检索条件
+ * @param {String | filter} query 检索条件
  * @returns {ContactInfo} 返回处理过的群成员信息
  * @example 
  * filter = {
@@ -51,7 +51,7 @@ const roomMemberListInfo = async (room) => {
  * @description 通过字符串查询群聊是否存在某人
  * @param {Room} room 群对象
  * @param {Robot} bot 机器人对象
- * @param {string} query 需要查询的用户条件
+ * @param {String} query 需要查询的用户条件
  */
 const roomHasPeople = async (room, bot, query) => {
     const contact = await bot.Contact.find(query);

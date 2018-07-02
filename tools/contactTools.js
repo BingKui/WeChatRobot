@@ -1,7 +1,7 @@
 /**
  * @description 返回联系人的信息
  * @param {Contact} contact 联系人对象
- * @returns {Object} 用户基础信息对象
+ * @returns {Object<ContactInfo>} 用户基础信息对象
  */
 const contactInfo = async (contact) => {
     if (!contact) {
@@ -25,7 +25,7 @@ const contactInfo = async (contact) => {
 /**
  * @description 处理联系人类型
  * @param {Contact} contact 联系人对象
- * @returns {string} 返回用户类型
+ * @returns {String} 返回用户类型
  */
 const contactType = (contact) => {
     const _type = contact.type();
@@ -42,7 +42,7 @@ const contactType = (contact) => {
 /**
  * @description 判断是否是个人类型的联系人
  * @param {Contact} contact 联系人对象
- * @return {boolean} 返回是否是个人，是的话 true，不是 false
+ * @return {Boolean} 返回是否是个人，是的话 true，不是 false
  */
 const contactIsPerson = (contact) => {
     const type = contact.type();
@@ -56,7 +56,7 @@ const contactIsPerson = (contact) => {
 /**
  * @description 处理联系人性别
  * @param {Contact} contact 联系人对象
- * @returns {string} 返回用户性别
+ * @returns {String} 返回用户性别
  */
 const contactGender = (contact) => {
     const gender = contact.gender();
@@ -73,7 +73,7 @@ const contactGender = (contact) => {
 /**
  * @description 处理联系人列表
  * @param {Array<Contact>} contactList 联系人对象数组
- * @returns {Array<contactInfo>} 返回处理过的用户信息数组
+ * @returns {Array<ContactInfo>} 返回处理过的用户信息数组
  */
 const contactListInfo = (contactList = []) => {
     return contactList.map(async item => await contactInfo(item));

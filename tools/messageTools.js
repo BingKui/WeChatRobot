@@ -22,7 +22,7 @@ const messageInfo = async (message) => {
         room, // 群聊房间
         roomInfo: await roomInfo(room), // 群聊房间信息
         type: messageType(message), // 消息类型
-        content: message.text(), // 消息内容
+        content: (message.text() || '').replace(/\s+/g, ''), // 消息内容
         mention, // 提及用户 list
         mentionInfo: contactListInfo(mention) || [], // 提及用户信息
         date: formatDate(message.date()), // 消息发送时间
@@ -33,7 +33,7 @@ const messageInfo = async (message) => {
 /**
  * @description 返回用于保存的简要数据对象
  * @param {Message} message 消息对象
- * @return {object} 用于保存到数据库的对象
+ * @return {Object} 用于保存到数据库的对象
  */
 const messageRecord = async (message) => {
     const info = await messageInfo(message);
@@ -43,7 +43,7 @@ const messageRecord = async (message) => {
 /**
  * @description 返回用于保存的简要数据对象
  * @param {MessageInfo} info 消息内容
- * @return {object} 用于保存到数据库的对象
+ * @return {Object} 用于保存到数据库的对象
  */
 const messageRecordInfo = (info) => {
     const mentionList = info.mentionInfo.map(item => item.name);
@@ -62,7 +62,7 @@ const messageRecordInfo = (info) => {
 /**
  * @description 返回消息的类型
  * @param {Message} message 消息对象
- * @return {MessageType: string} 返回消息类型描述
+ * @return {MessageType: String} 返回消息类型描述
  */
 const messageType = (message) => {
     const msgType = message.type();

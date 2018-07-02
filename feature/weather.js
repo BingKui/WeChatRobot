@@ -21,20 +21,23 @@ const weatherAutoPush = (contact, city) => {
 
 /**
  * @description 生成天气消息
- * @param {WeatherInfo} info 天气信息对象
- * @return {string} 返回天气消息字符串
+ * @param {Message} message 消息对象
+ * @param {String} city 城市
  */
-const weatherMessage = (info) => {
+const weatherMessage = async (message, city) => {
+    const info = await weatherInfo(city);
+    let msgText = '';
     if (!info) {
-        return '获取天气失败';
+        msgText = '目前还不知道天气怎样！';
     }
-    return `${info.city}\n天气：${info.weather}\n气温：${info.temperature}℃\n发布时间：${info.date}`;
+    msgText = `${info.city}\n天气：${info.weather}\n气温：${info.temperature}℃\n发布时间：${info.date}`;
+    await message.say(msgText);
 }
 
 /**
  * @description 获取某个天气信息
- * @param {string} city 需要获取天气信息的城市名称
- * @return {object} 基本天气信息
+ * @param {String} city 需要获取天气信息的城市名称
+ * @return {Object} 基本天气信息
  */
 const weatherInfo = async (city) => {
     const _city = Pinyin(city, { style: Pinyin['STYLE_NORMAL'] }).join('');

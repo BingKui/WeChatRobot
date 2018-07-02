@@ -6,7 +6,7 @@
  * @param {Array<string>} bomb 轰炸的消息内容
  * @todo 后续增加其他类型的消息轰炸，如图片、文件等。
  */
-const defaultBomb = async (obj, bomb) => {
+const bombMessage = async (obj, bomb) => {
     bomb.map(item => await obj.say(item));
 }
 
@@ -21,6 +21,6 @@ const roomAndMessageBomb = async (obj, bomb, memtion) => {
 }
 
 module.exports = {
-    defaultBomb,
+    bombMessage,
     roomAndMessageBomb,
 };

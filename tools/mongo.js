@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const { mongoDB } = require('./config');
+const { mongoDB } = require('../config/config.js');
 
 // 链接数据库
 mongoose.connect(mongoDB);

@@ -9,13 +9,20 @@ const { jokeKey } = require('../tools/config.js');
  */
 const jokeInfo = async () => {
     const res = await Axios.get(`${jokeUrl}${jokeKey}`);
-    let result = '获取笑话失败！';
+    let result = '没什么笑话！';
     if (res) {
         result = res.data.result[2].content;
     }
     return result;
 }
 
-module.exports = {
-    jokeInfo,
-};
+/**
+ * @description 发送笑话信息
+ * @param {Message} message 消息对象
+ */
+const jokeMessage = (message) => {
+    const joke = jokeInfo();
+    await message.say(joke);
+}
+
+module.exports = jokeMessage;
