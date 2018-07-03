@@ -21,6 +21,7 @@ const messageInfo = async (message) => {
         acceptInfo: await contactInfo(accept), // 接收者用户信息，在 room 中返回 null
         room, // 群聊房间
         roomInfo: await roomInfo(room), // 群聊房间信息
+        isGroupMsg: room !== null, // 是否是群聊消息
         type: messageType(message), // 消息类型
         content: messageText(message), // 消息内容
         mention, // 提及用户 list
@@ -65,7 +66,7 @@ const messageRecordInfo = (info) => {
         send: info.sendInfo.name, //发送人名字
         accept, // 接收者，可能是人名或者群名
         type: info.type, // 消息的类型
-        isGroupMsg: info.room !== null, // 是否是群消息
+        isGroupMsg: info.isGroupMsg, // 是否是群消息
         content: info.content, // 内容
         date: info.date, // 时间
         mentionList, // 提到的人
@@ -81,7 +82,12 @@ const messageType = (message) => {
     const msgType = message.type();
     const msgTypeEnum = [0, 'Attachment', 'Audio', 'Contact', 'Emoticon', 'Image', 'Text', 'Video'];
     const msgTypeResult = ['未知', '附件', '语音', '联系人名片', '表情', '图片', '文本', '视频'];
-    return msgTypeResult[msgTypeEnum.indexOf(msgType)];
+    const index = msgTypeEnum.indexOf(msgType);
+    if (index > -1) {
+        return msgTypeResult[index];
+    } else {
+        return '撤回';
+    }
 }
 
 /**

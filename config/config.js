@@ -16,6 +16,8 @@ module.exports = {
     isSaveChatLog: true,
     // 是否开启消息轰炸功能，默认关闭
     isOpenMsgBomb: false,
+    // 是否开启休息提醒功能，默认关闭
+    isOpenRemind: false,
     // log4js 配置
     log4js: {
         "appenders": [{

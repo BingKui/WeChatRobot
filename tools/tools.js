@@ -40,9 +40,27 @@ const readDirData = (path) => {
     return fs.readdirSync(path, { encoding:'utf-8' });
 }
 
+/**
+ * @description 判断一个用户是否在提及列表中
+ * @param {Array<MentionInfo>} list 提及对象的信息列表
+ * @param {String} name 需要判断的对象名字
+ * @return {Boolean} 返回是否被提及
+ */
+const mentioned = (list, name) => {
+    let result = false;
+    for (let i = 0; i < list.length; i++) {
+        if (list[i].name === name) {
+            result = true;
+            break;
+        }
+    }
+    return result;
+}
+
 module.exports = {
     formatDate,
     randomNum,
     readJsonFile,
     readDirData,
+    mentioned,
 };

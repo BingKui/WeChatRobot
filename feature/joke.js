@@ -2,6 +2,7 @@
 const Axios = require('axios');
 const { jokeUrl } = require('../tools/url.js');
 const { jokeKey } = require('../tools/config.js');
+const { messageText } = require('../tools/messageTools.js');
 
 /**
  * @description 获取一个笑话
@@ -20,9 +21,14 @@ const jokeInfo = async () => {
  * @description 发送笑话信息
  * @param {Message} message 消息对象
  */
-const jokeMessage = (message) => {
-    const joke = jokeInfo();
-    await message.say(joke);
+const jokeMessage = async (message) => {
+    const text = messageText(message);
+    if (text.indexOf('笑话') > -1) {
+        const joke = await jokeInfo();
+        await message.say(joke);
+        return true;
+    }
+    return false;
 }
 
 module.exports = jokeMessage;

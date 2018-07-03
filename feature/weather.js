@@ -4,6 +4,7 @@ const Pinyin = require('pinyin');
 const Axios = require('axios');
 const { weatherUrl } = require('../tools/url.js');
 const { weatherAPIKey } = require('../tools/config.js');
+const { messageText } = require('../tools/messageTools.js');
 
 /**
  * @description 定时任务，推送天气
@@ -14,7 +15,7 @@ const weatherAutoPush = (contact, city) => {
     Schedule.scheduleJob('0 30 9 * * *', async () => {
         // 推送天气
         const weatherInfo = await weatherInfo(city);
-        const msg = weatherMessage(weatherInfo);
+        const msg = weatherText(weatherInfo);
         await contact.say(msg);
     });
 }
@@ -22,16 +23,37 @@ const weatherAutoPush = (contact, city) => {
 /**
  * @description 生成天气消息
  * @param {Message} message 消息对象
- * @param {String} city 城市
+ * @return {Boolean} 消息发送成功与否
  */
-const weatherMessage = async (message, city) => {
-    const info = await weatherInfo(city);
+const weatherMessage = async (message) => {
+    const text = messageText(message);
+    if (text.indexOf('天气') > -1) {
+        const city = weatherCity(text);
+        const info = await weatherInfo(city);
+        await message.say(weatherText(info));
+        return true;
+    }
+    return false;
+}
+
+const weatherText = (info) => {
     let msgText = '';
     if (!info) {
         msgText = '目前还不知道天气怎样！';
     }
     msgText = `${info.city}\n天气：${info.weather}\n气温：${info.temperature}℃\n发布时间：${info.date}`;
-    await message.say(msgText);
+    return msgText;
+}
+
+/**
+ * 
+ * @param {String} text 消息文本内容
+ * @return {String} 返回城市名称
+ * @TODO 增加百度的语法分析，准确获取城市
+ */
+const weatherCity = (text) => {
+    // 默认天气城市为：杭州
+    return text.split('的')[1] || '杭州';
 }
 
 /**
