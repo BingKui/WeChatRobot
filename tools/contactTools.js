@@ -30,10 +30,10 @@ const contactInfo = async (contact) => {
 const contactType = (contact) => {
     const _type = contact.type();
     let _result = '未知';
-    if (_type === 'Personal') {
+    if (_type === 1) {
         _result = '个人';
     }
-    if (_type === 'Official') {
+    if (_type === 2) {
         _result = '官方';
     }
     return _result;
@@ -47,7 +47,7 @@ const contactType = (contact) => {
 const contactIsPerson = (contact) => {
     const type = contact.type();
     let result = false;
-    if (type === 'Personal') {
+    if (type === 1) {
         result = true;
     }
     return result;

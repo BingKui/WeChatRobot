@@ -15,6 +15,10 @@ const {
     groupLeaveMessage,
     groupTopicChange,
 } = require('./feature/group.js');
+
+const { isAutoChangeAvatar } = require('./config/config.js');
+
+
 // 实例化机器人对象
 const bot = Wechaty.instance();
 
@@ -25,18 +29,22 @@ let userSelf = null;
 bot.on('scan', (qrCode, statusCode) => {
     // 判断状态码
     if (!/201|200/.test(statusCode)) {
-        QrcodeTerminal.generate(qrCode, { small: true });
+        QrcodeTerminal.generate(qrCode);
+        console.log('扫描二维码登录~~~~');
     }
 });
 
 // 监听登录方法
 bot.on('login', async (userContact) => {
     userSelf = await contactInfo(userContact);
-    console.log('登录成功，用户：', userSelf);
+    console.log('登录成功，用户信息：', userSelf);
+    // 是否开启每天自动修改头像
+    if (isAutoChangeAvatar) {
+        avatarAutoChange(userContact);
+    }
 })
 
 // 监听消息
-// TODO 屏蔽公众号发来的消息
 bot.on('message', async (message) => {
     const info = await messageInfo(message);
     const infoRecord = messageRecordInfo(info);

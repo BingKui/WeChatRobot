@@ -5,11 +5,11 @@ module.exports = {
     // 机器人回复前缀
     robotSuffix: '🤖',
     // 是否根据星期修改头像，默认关闭
-    changeAvatar: false,
+    isAutoChangeAvatar: false,
     // 个人天气推送，默认关闭
-    weatherPerson: false,
+    isAutoPushWeatherPerson: false,
     // 群天气推送，默认关闭
-    weatherRoom: false,
+    isAutoPushWeatherRoom: false,
     // 数据库地址
     mongoDB: 'mongodb://localhost:27017/wechatrobot',
     // 是否开启聊天记录存储，默认开启

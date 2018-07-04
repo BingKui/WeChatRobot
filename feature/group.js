@@ -38,7 +38,7 @@ const groupObject = async (bot, topic = '') => {
  * @param {String} topic 群昵称
  * @param {Contact} contact 联系人对象
  */
-const groupAddOne = (bot, topic, contact) => {
+const groupAddOne = async (bot, topic, contact) => {
     // 获取一个Room对象
     let room = groupObject(bot, topic);
     if (!room) {

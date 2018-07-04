@@ -7,10 +7,10 @@ const { avatarImg } = require('../tools/assetTools.js');
  * @param {Contact} contact 登录的用户对象
  */
 const avatarAutoChange = (contact) => {
-    schedule.scheduleJob('0 1 0 * * *', () => {
+    schedule.scheduleJob('0 1 0 * * *', async () => {
         const avatarFile = avatarImg();
         try {
-            contact.avatar(avatarFile);
+            await contact.avatar(avatarFile);
         } catch (err) {
             console.log('修改头像失败');
         }
