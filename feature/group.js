@@ -1,6 +1,7 @@
 // 群组聊天相关功能
 const { mentioned } = require('../tools/tools.js');
 const { contactListInfo, contactInfo } = require('../tools/contactTools.js');
+const dialogMessage = require('./dialog.js');
 /**
  * @description 回复群聊中的 @ 消息，并回 @ 回去
  * @param {Message} message 消息对象
@@ -15,6 +16,7 @@ const groupMessage = async (message, info, self) => {
     // 如果 @ 到自己，在进行回复
     if (mentioned(info.mentionInfo, self.name)) {
         // 处理消息进行回复
+        await dialogMessage(message);
     }
 }
 

@@ -1,6 +1,6 @@
 // 笑话相关功能
 const Axios = require('axios');
-const { jokeUrl } = require('../tools/url.js');
+const { jokeUrl } = require('../config/url');
 const { jokeKey } = require('../tools/config.js');
 const { messageText } = require('../tools/messageTools.js');
 

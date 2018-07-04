@@ -2,12 +2,13 @@
 const assetsMessage = require('./assets.js');
 const jokeMessage = require('./joke.js');
 const weatherMessage = require('./weather.js');
+const dialogMessage = require('./dialog.js')
 /**
- * 
+ * @description 个人类消息处理
  * @param {Message} message Message 对象
  * @param {MessageInfo} info 消息信息
  */
-const singleMessage = (message, info) => {
+const singleMessage = async (message, info) => {
     // 自己发的消息，直接返回
     if (info.isSelf) {
         return;
@@ -16,10 +17,9 @@ const singleMessage = (message, info) => {
     const isAssets = await assetsMessage(message);
     const isJoke = await jokeMessage(message);
     const isWeather = await weatherMessage(message);
-    if (!isAssets && !isJoke && !isWeather) {}
-    if (!await assetsMessage(message)) {
-        // 处理信息，进行回复
-
+    if (!isAssets && !isJoke && !isWeather) {
+        // 不是特殊类型消息，转入对话模块
+        await dialogMessage(message);
     }
 }
 
