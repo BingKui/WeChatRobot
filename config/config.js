@@ -11,7 +11,7 @@ module.exports = {
     // 群天气推送，默认关闭
     isAutoPushWeatherRoom: false,
     // 数据库地址
-    mongoDB: 'mongodb://localhost:27017/wechatrobot',
+    mongoDB: 'mongodb://127.0.0.1:27017/wechatrobot',
     // 是否开启聊天记录存储，默认开启
     isSaveChatLog: true,
     // 是否开启消息轰炸功能，默认关闭

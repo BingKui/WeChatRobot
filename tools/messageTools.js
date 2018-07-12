@@ -1,5 +1,5 @@
 const { formatDate } = require('./tools.js');
-const { contactInfo } = require('./contactTools.js');
+const { contactInfo, contactListInfo } = require('./contactTools.js');
 const { roomInfo } = require('./roomTools.js');
 /**
  * @description 处理 message 对象，返回对象的基本信息和数据
@@ -80,14 +80,8 @@ const messageRecordInfo = (info) => {
  */
 const messageType = (message) => {
     const msgType = message.type();
-    const msgTypeEnum = [0, 'Attachment', 'Audio', 'Contact', 'Emoticon', 'Image', 'Text', 'Video'];
     const msgTypeResult = ['未知', '附件', '语音', '联系人名片', '表情', '图片', '文本', '视频'];
-    const index = msgTypeEnum.indexOf(msgType);
-    if (index > -1) {
-        return msgTypeResult[index];
-    } else {
-        return '撤回';
-    }
+    return msgTypeResult[msgType];
 }
 
 /**

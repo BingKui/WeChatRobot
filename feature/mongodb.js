@@ -6,6 +6,7 @@ const ChatRecord = require('../model/chatrecord.js');
  * @param {MessageRecordInfo} data 需要存入数据库的数据
  */
 const saveMessage = (data) => {
+    console.log('保存聊天信息：', JSON.stringify(data));
     const item = new ChatRecord(data);
     item.save((err) => {
         if (err) {

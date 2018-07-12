@@ -12,12 +12,12 @@ const roomInfo = async (room) => {
     if (!room) {
         return null;
     }
-    const members = await room.memberAll();
+    const members = await room.memberList();
     return {
         name: await room.topic(), // 群名字
-        announce: await room.announce(), // 群公告
+        // announce: await room.announce(), // 群公告，暂不支持
         memberNumber: members.length, // 群成员数
-        avatar: await room.avatar(), // 群头像图片
+        // avatar: await room.avatar(), // 群头像图片，暂不支持
     };
 }
 

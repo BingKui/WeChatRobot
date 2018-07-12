@@ -3,7 +3,7 @@ const Schedule = require('node-schedule');
 const Pinyin = require('pinyin');
 const Axios = require('axios');
 const { weatherUrl } = require('../config/url');
-const { weatherAPIKey } = require('../tools/config.js');
+const { weatherAPIKey } = require('../config/config.js');
 const { messageText } = require('../tools/messageTools.js');
 
 /**

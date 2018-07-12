@@ -16,8 +16,12 @@ const {
     groupTopicChange,
 } = require('./feature/group.js');
 
+const { singleMessage } = require('./feature/single.js');
+
 const { isAutoChangeAvatar } = require('./config/config.js');
 
+// 引入数据库链接文件
+require('./tools/mongo.js');
 
 // 实例化机器人对象
 const bot = Wechaty.instance();
@@ -46,6 +50,7 @@ bot.on('login', async (userContact) => {
 
 // 监听消息
 bot.on('message', async (message) => {
+    console.log('有新消息~~~');
     const info = await messageInfo(message);
     const infoRecord = messageRecordInfo(info);
     // 判断是否是个人类型的消息，如果不是，直接返回不做处理

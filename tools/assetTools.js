@@ -1,5 +1,5 @@
 const dayjs = require('dayjs');
-const FileBox = require('file-box');
+const { FileBox } = require('file-box');
 const { readDirData, randomNum } = require('./tools.js');
 
 /**
@@ -19,7 +19,7 @@ const imgMessage = (bot, imgName) => {
  */
 const avatarImg = () => {
     const num = dayjs().day();
-    return FileBox.fromLocal(`${process.cwd()}/assets/avatar/${num}.jpg`, 'avatar');
+    return FileBox.fromFile(`${process.cwd()}/assets/avatar/${num}.jpg`, 'avatar');
 }
 
 /**
@@ -33,7 +33,7 @@ const randomFile = (foolder) => {
     let result = '暂时没有相关资源！';
     if (pathData.length > 0) {
         const filename = pathData[randomNum(0, pathData.length - 1)];
-        result = FileBox.fromLocal(`${path}/${filename}`);
+        result = FileBox.fromFile(`${path}/${filename}`);
     }
     return result;
 }

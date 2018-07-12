@@ -1,7 +1,7 @@
 // 单聊相关功能
 const assetsMessage = require('./assets.js');
 const jokeMessage = require('./joke.js');
-const weatherMessage = require('./weather.js');
+const { weatherMessage } = require('./weather.js');
 const dialogMessage = require('./dialog.js')
 /**
  * @description 个人类消息处理
