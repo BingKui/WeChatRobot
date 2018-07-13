@@ -1,7 +1,6 @@
 # WeChatRobot
-微信自动回复机器人，帮助解决大批量关键词信息的回复。
 
-支持自定义启用群组，自定义知识库，根据不同的答案回答不同的消息。
+微信机器人，能够排忧解难，帮你处理大量的操作。也可以陪你聊天，获取想要的信息。
 
 ## 项目目录
 
@@ -17,10 +16,10 @@ WechatRobot
     |    |---wallpaper // 壁纸资源
     |---config  // 配置文件目录
     |---feature  // 功能文件目录，存放各个功能的实现
-    |---knowledge  // 知识库，早期版本知识库，在 v0.3.0 中会被删除
+    |---knowledge  // 知识库，早期版本知识库，在 v0.3.0 中会被删除，改用独立项目支持
     |---log  // 日志目录，后续会被删除
     |---model  // mongoose 数据库模型目录，存放数据库映射关系
-    |---temp  // 聊天记录存放目录，在 v0.3.0 中会被删除，改用数据库记录
+    |---temp  // 聊天记录存放目录，在 v0.2.4 中被删除，改用数据库记录
     |---test  // 存放用于临时测试的文件
     |---token  // 百度 AI Token 存放目录，在 v0.3.0 接入百度 AI 后删除，改用数据库记录
     |---tools  // 工具类存放目录，主要存放相关的工具类，为功能模块提供支持
@@ -86,5 +85,29 @@ model：存放数据库模型。
 knowledge：保存知识库资料，此版本没有知识库功能，后续版本会替换成独立项目匹配知识库，管理知识库。
 
 token：保存百度AI的 Access Token 
+
+## 开源协议
+
+MIT License
+
+Copyright (c) 2018 康兵奎
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
 
 ## [更新日志](./updatelog.md)
