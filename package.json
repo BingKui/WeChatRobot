@@ -1,6 +1,6 @@
 {
   "name": "wechatrobot",
-  "version": "0.2.5",
+  "version": "0.2.6",
   "description": "微信机器人，能够排忧解难，帮你处理大量的操作。也可以陪你聊天，获取想要的信息。",
   "main": "robot.js",
   "scripts": {

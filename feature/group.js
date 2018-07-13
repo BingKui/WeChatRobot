@@ -1,7 +1,12 @@
 // 群组聊天相关功能
+const { Wechaty } = require('wechaty');
 const { mentioned } = require('../tools/tools.js');
 const { contactListInfo, contactInfo } = require('../tools/contactTools.js');
 const dialogMessage = require('./dialog.js');
+const { messageText, messageInfo } = require('../tools/messageTools.js');
+
+const bot = Wechaty.instance();
+
 /**
  * @description 回复群聊中的 @ 消息，并回 @ 回去
  * @param {Message} message 消息对象
@@ -21,32 +26,46 @@ const groupMessage = async (message, info, self) => {
 }
 
 /**
- * @description 创建一个群聊
- * @param {Wechaty} bot 机器人对象实例
+ * @description 查询群聊对象，不能存在直接创建
  * @param {Array<Contact>} cantactList 联系人列表
  * @param {String} topic 群名称
  */
-const groupObject = async (bot, topic = '') => {
+const groupObject = async (topic = '') => {
     // 查找是否存在
-    const room = await bot.Room.find({topic});
+    let room = await bot.Room.find({topic});
+    if (!room) {
+        // 房间不存在，直接创建
+        room = await bot.Room.create([contact], topic);
+    }
     return room;
 }
 
 /**
  * @description 群聊中添加一个对象
- * @param {Wechaty} bot 机器人对象实例
  * @param {String} topic 群昵称
  * @param {Contact} contact 联系人对象
  */
-const groupAddOne = async (bot, topic, contact) => {
+const groupAddOne = async (topic, contact) => {
     // 获取一个Room对象
-    let room = groupObject(bot, topic);
-    if (!room) {
-        // 房间不存在，直接创建
-        await bot.Room.create(cantactList, topic);
-    }
+    const room = await groupObject(topic);
     // 添加用户到群聊
     await room.add(contact);
+}
+
+/**
+ * @description 群聊添加用户操作
+ * @param {Message} message 消息对象
+ * @return {Boolean} 消息发送成功与否
+ */
+const groupAddAction = async (message) => {
+    const text = messageText(message);
+    if (text.indexOf('进群') > -1) {
+        const info = await messageInfo(message);
+        // 目前只先添加到 “测试群聊”
+        await groupAddOne('测试群聊', info.send);
+        return true;
+    }
+    return false;
 }
 
 /**
@@ -108,4 +127,5 @@ module.exports = {
     groupLeaveMessage,
     groupJoinMessage,
     groupTopicChange,
+    groupAddAction,
 }
