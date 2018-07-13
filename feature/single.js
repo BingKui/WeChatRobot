@@ -3,6 +3,8 @@ const assetsMessage = require('./assets.js');
 const jokeMessage = require('./joke.js');
 const { weatherMessage } = require('./weather.js');
 const dialogMessage = require('./dialog.js')
+const { groupAddAction } = require('./group.js');
+
 /**
  * @description 个人类消息处理
  * @param {Message} message Message 对象
@@ -17,6 +19,7 @@ const singleMessage = async (message, info) => {
     const isAssets = await assetsMessage(message);
     const isJoke = await jokeMessage(message);
     const isWeather = await weatherMessage(message);
+    const isJoinGroup = await groupAddAction(message);
     if (!isAssets && !isJoke && !isWeather) {
         // 不是特殊类型消息，转入对话模块
         await dialogMessage(message);

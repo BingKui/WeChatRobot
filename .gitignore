@@ -60,3 +60,4 @@ typings/
 # temp 聊天记录
 # temp/*
 .DS_Store
+default.memory-card.json
