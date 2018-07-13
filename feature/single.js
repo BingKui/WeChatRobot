@@ -20,7 +20,7 @@ const singleMessage = async (message, info) => {
     const isJoke = await jokeMessage(message);
     const isWeather = await weatherMessage(message);
     const isJoinGroup = await groupAddAction(message);
-    if (!isAssets && !isJoke && !isWeather) {
+    if (!isAssets && !isJoke && !isWeather && !isJoinGroup) {
         // 不是特殊类型消息，转入对话模块
         await dialogMessage(message);
     }
