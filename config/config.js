@@ -18,6 +18,8 @@ module.exports = {
     isOpenMsgBomb: false,
     // 是否开启休息提醒功能，默认关闭
     isOpenRemind: false,
+    // 是否支持知识库功能，默认不支持
+    isKnowledgeSupport: false,
     // log4js 配置
     log4js: {
         "appenders": [{
