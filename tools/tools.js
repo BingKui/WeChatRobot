@@ -57,6 +57,29 @@ const mentioned = (list, name) => {
     return result;
 }
 
+// 判断是否是 @ 机器人
+const checkAtRobot = (username, content) => {
+    let flag = false;
+    const isAt = /\@/g.test(content);
+    if (isAt) {
+        const _space = returnSpace(content);
+        const _username = (content.split('@')[1]).split(_space)[0];
+        if (username === _username) {
+            flag = true;
+        }
+    }
+    return flag;
+}
+
+/**
+ * 
+ * @param {*} con 
+ */
+const returnSpace = (con) => {
+    const _str = con.split('@')[1];
+    return _str.indexOf(' ') > -1 ? ' ' : ' ';
+}
+
 module.exports = {
     formatDate,
     randomNum,
