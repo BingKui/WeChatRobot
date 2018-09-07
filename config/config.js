@@ -2,6 +2,8 @@
 module.exports = {
     // 限制群名，只在特定群内回复
     groupList: ["一个人的群聊", "年轻人"],
+    // 机器人模式消息提示信息
+    robotTipMessage: '🤖：机器人模式开启，机器人接管聊天',
     // 机器人回复前缀
     robotSuffix: '🤖',
     // 是否根据星期修改头像，默认关闭
@@ -18,6 +20,8 @@ module.exports = {
     isOpenMsgBomb: false,
     // 是否开启休息提醒功能，默认关闭
     isOpenRemind: false,
+    // 是否支持知识库功能，默认不支持
+    isKnowledgeSupport: false,
     // log4js 配置
     log4js: {
         "appenders": [{

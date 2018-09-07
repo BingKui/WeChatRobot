@@ -7,7 +7,7 @@ const { messageText } = require('../tools/messageTools.js');
  * @param {String} text 消息内容
  */
 const poemState = (text) => {
-    const reg = new RegExp(`/首诗/g`);
+    const reg = new RegExp(`/诗/g`);
     return reg.test(text);
 }
 

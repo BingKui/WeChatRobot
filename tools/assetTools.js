@@ -39,6 +39,16 @@ const randomFile = (foolder) => {
 }
 
 /**
+ * @description 通过 url 生成远程资源文件
+ * @param {String} url 资源文件地址
+ * @returns {FileBox} 返回 FileBox 文件对象，可以直接用于发送
+ */
+const remoteFile = (url) => {
+    const result = FileBox.fromUrl(url);
+    return result;
+}
+
+/**
  * @description 根据消息内容返回相应的资源目录，如果都不匹配返回 false
  * @param {String} text 消息内容
  */
@@ -58,6 +68,8 @@ const assetFolder = (text) => {
             return 'video';
         case '语音':
             return 'voice';
+        case '小程序':
+            return 'miniprogram';
         default:
             return false;
     }
@@ -67,5 +79,6 @@ module.exports = {
     imgMessage,
     avatarImg,
     randomFile,
+    remoteFile,
     assetFolder,
 };

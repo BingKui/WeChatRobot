@@ -18,6 +18,7 @@ const groupMessage = async (message, info, self) => {
     if (info.isSelf) {
         return;
     }
+    console.log(info.mentionInfo);
     // 如果 @ 到自己，在进行回复
     if (mentioned(info.mentionInfo, self.name)) {
         // 处理消息进行回复
@@ -33,9 +34,10 @@ const groupMessage = async (message, info, self) => {
 const groupObject = async (topic = '') => {
     // 查找是否存在
     let room = await bot.Room.find({topic});
+    const userSelf = bot.userSelf();
     if (!room) {
         // 房间不存在，直接创建
-        room = await bot.Room.create([contact], topic);
+        room = await bot.Room.create([contact, userSelf], topic);
     }
     return room;
 }
