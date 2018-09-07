@@ -68,6 +68,8 @@ const assetFolder = (text) => {
             return 'video';
         case '语音':
             return 'voice';
+        case '小程序':
+            return 'miniprogram';
         default:
             return false;
     }

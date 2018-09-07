@@ -5,6 +5,7 @@ const { weatherMessage } = require('./weather.js');
 const dialogMessage = require('./dialog.js')
 const { groupAddAction } = require('./group.js');
 const planMessage = require('./plan.js');
+const playlistMessage = require('./playlist.js');
 
 /**
  * @description 个人类消息处理
@@ -22,7 +23,8 @@ const singleMessage = async (message, info) => {
     const isWeather = await weatherMessage(message);
     const isJoinGroup = await groupAddAction(message);
     const isPlan = await planMessage(message);
-    if (!isAssets && !isJoke && !isWeather && !isJoinGroup && !isPlan) {
+    const isPlaylist = await playlistMessage(message);
+    if (!isAssets && !isJoke && !isWeather && !isJoinGroup && !isPlan && !isPlaylist) {
         // 不是特殊类型消息，转入对话模块
         await dialogMessage(message);
     }
