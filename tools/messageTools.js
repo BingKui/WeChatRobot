@@ -25,7 +25,7 @@ const messageInfo = async (message) => {
         type: messageType(message), // 消息类型
         content: messageText(message), // 消息内容
         mention, // 提及用户 list
-        mentionInfo: contactListInfo(mention) || [], // 提及用户信息
+        mentionInfo: await contactListInfo(mention) || [], // 提及用户信息
         date: formatDate(message.date()), // 消息发送时间
         age: message.age(), // 消息的年龄，据当前时间的秒数
     };

@@ -18,6 +18,7 @@ const groupMessage = async (message, info, self) => {
     if (info.isSelf) {
         return;
     }
+    console.log(info.mentionInfo);
     // 如果 @ 到自己，在进行回复
     if (mentioned(info.mentionInfo, self.name)) {
         // 处理消息进行回复
