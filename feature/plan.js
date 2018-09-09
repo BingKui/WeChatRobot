@@ -44,7 +44,7 @@ const dealTime = (date, start, end) => {
  */
 const planMessage = async (message) => {
     const { date } = await messageInfo(message);
-    const { flag, result } = planState(content, date);
+    const { flag, result } = planState(date);
     if (flag) {
         await message.say(robotTipMessage);
         await message.say(`${robotSuffix}：${result}`);
