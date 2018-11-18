@@ -1,6 +1,6 @@
 {
   "name": "wechatrobot",
-  "version": "0.3.1",
+  "version": "0.4.1",
   "description": "微信机器人，能够排忧解难，帮你处理大量的操作。也可以陪你聊天，获取想要的信息。",
   "main": "robot.js",
   "scripts": {
@@ -30,6 +30,6 @@
     "node-schedule": "^1.3.0",
     "pinyin": "^2.8.3",
     "qrcode-terminal": "^0.12.0",
-    "wechaty": "^0.18.3"
+    "wechaty": "^0.22.4"
   }
 }
