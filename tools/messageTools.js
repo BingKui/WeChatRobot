@@ -1,3 +1,4 @@
+const { Message } = require('wechaty');
 const { formatDate } = require('./tools.js');
 const { contactInfo, contactListInfo } = require('./contactTools.js');
 const { roomInfo } = require('./roomTools.js');
@@ -12,6 +13,7 @@ const messageInfo = async (message) => {
     const send = message.from();
     const accept = message.to();
     const mention = await message.mention();
+    const mentionSelf = await message.mentionSelf();
     const room = message.room();
     return {
         isSelf: message.self(), // 是否是自己发的消息
@@ -26,6 +28,7 @@ const messageInfo = async (message) => {
         content: messageText(message), // 消息内容
         mention, // 提及用户 list
         mentionInfo: contactListInfo(mention) || [], // 提及用户信息
+        mentionSelf, // 是否提及自己
         date: formatDate(message.date()), // 消息发送时间
         age: message.age(), // 消息的年龄，据当前时间的秒数
     };
@@ -80,8 +83,26 @@ const messageRecordInfo = (info) => {
  */
 const messageType = (message) => {
     const msgType = message.type();
-    const msgTypeResult = ['未知', '附件', '语音', '联系人名片', '表情', '图片', '文本', '视频'];
-    return msgTypeResult[msgType];
+    switch(msgType) {
+        case Message.Type.Unknown:
+            return '未知';
+        case Message.Type.Attachment:
+            return '附件';
+        case Message.Type.Audio:
+            return '语音';
+        case Message.Type.Contact:
+            return '联系人名片';
+        case Message.Type.Emoticon:
+            return '表情';
+        case Message.Type.Image:
+            return '图片';
+        case Message.Type.Text:
+            return '文本';
+        case Message.Type.Video:
+            return '视频';
+        case Message.Type.Url:
+            return '网址';
+    }
 }
 
 /**

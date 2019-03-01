@@ -1,3 +1,4 @@
+const { Contact } = require('wechaty');
 /**
  * @description 返回联系人的信息
  * @param {Contact} contact 联系人对象
@@ -8,7 +9,7 @@ const contactInfo = async (contact) => {
         return null;
     }
     return {
-        name: await contact.name(), // 名字
+        name: contact.name(), // 名字
         alias: await contact.alias(), // 备注名称
         // age: '', // 年龄
         gender: contactGender(contact), // 性别
@@ -30,10 +31,10 @@ const contactInfo = async (contact) => {
 const contactType = (contact) => {
     const _type = contact.type();
     let _result = '未知';
-    if (_type === 1) {
+    if (_type === Contact.Type.Personal) {
         _result = '个人';
     }
-    if (_type === 2) {
+    if (_type === Contact.Type.Official) {
         _result = '官方';
     }
     return _result;
@@ -47,7 +48,7 @@ const contactType = (contact) => {
 const contactIsPerson = (contact) => {
     const type = contact.type();
     let result = false;
-    if (type === 1) {
+    if (type === Contact.Type.Personal) {
         result = true;
     }
     return result;
@@ -61,10 +62,10 @@ const contactIsPerson = (contact) => {
 const contactGender = (contact) => {
     const gender = contact.gender();
     let result = '未知';
-    if (gender === 1) {
+    if (gender === Contact.Gender.Male) {
         result = '男';
     }
-    if (gender === 2) {
+    if (gender === Contact.Gender.Female) {
         result = '女';
     }
     return result;

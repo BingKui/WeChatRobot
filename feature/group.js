@@ -33,9 +33,10 @@ const groupMessage = async (message, info, self) => {
 const groupObject = async (topic = '') => {
     // 查找是否存在
     let room = await bot.Room.find({topic});
+    console.log('查找到的房间为：', room);
     if (!room) {
         // 房间不存在，直接创建
-        room = await bot.Room.create([contact], topic);
+        room = await wechaty.Room.create([contact], topic);
     }
     return room;
 }
@@ -45,11 +46,19 @@ const groupObject = async (topic = '') => {
  * @param {String} topic 群昵称
  * @param {Contact} contact 联系人对象
  */
-const groupAddOne = async (topic, contact) => {
+const groupAddOne = async (topic, contactName) => {
     // 获取一个Room对象
     const room = await groupObject(topic);
+    console.log('获取到的群信息为：', room);
+    const contact = await bot.Contact.find({name: contactName});
+    console.log('需要加入群聊的对象为：', contact);
     // 添加用户到群聊
-    await room.add(contact);
+    try {
+        await room.add(contact);
+        setTimeout(() => room.say('Welcome ', contact), 10 * 1000);
+    } catch (e) {
+        console.log('Bot', 'putInRoom() exception: ' + e.stack);
+    }
 }
 
 /**
@@ -61,8 +70,9 @@ const groupAddAction = async (message) => {
     const text = messageText(message);
     if (text.indexOf('进群') > -1) {
         const info = await messageInfo(message);
+        console.log('消息发送者：', info.sendInfo.name);
         // 目前只先添加到 “测试群聊”
-        await groupAddOne('测试群聊', info.send);
+        await groupAddOne('测试群聊', info.sendInfo.name);
         return true;
     }
     return false;
@@ -74,8 +84,7 @@ const groupAddAction = async (message) => {
  * @param {Array<Contact>} leaveList 离开的用户数组
  */
 const groupLeaveMessage = async (room, leaveList) => {
-    const infoList = contactListInfo(leaveList);
-    const names = infoList.map(item => item.name).join('、');
+    const names = leaveList.map(item => item.name()).join('、');
     await room.say(`${names}退出了群聊。`)
 }
 
@@ -89,14 +98,13 @@ const groupLeaveMessage = async (room, leaveList) => {
  */
 const groupJoinMessage = async (room, joinList, inviter, self) => {
     // 判断是否是机器人自己拉的人
-    const isRobot = inviter.name === self.name;
-    const infoList = contactListInfo(joinList);
-    const names = infoList.map(item => item.name).join('、');
+    const isRobot = inviter.name() === self.name;
+    const names = joinList.map(item => item.name()).join('、');
     let msgText = '';
     if (isRobot) {
         msgText = `欢迎${names}加入群聊！🎉 🎉 `;
     } else {
-        msgText = `欢迎${names}加入群聊！🎉 感谢${inviter.name}的邀请！👍 `;
+        msgText = `欢迎${names}加入群聊！🎉 感谢${inviter.name()}的邀请！👍 `;
     }
     await room.say(msgText);
 }

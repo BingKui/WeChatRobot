@@ -35,6 +35,7 @@ const randomFile = (foolder) => {
         const filename = pathData[randomNum(0, pathData.length - 1)];
         result = FileBox.fromFile(`${path}/${filename}`);
     }
+    console.log('获取到的文件为：', result);
     return result;
 }
 
