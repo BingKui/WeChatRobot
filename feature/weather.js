@@ -29,8 +29,13 @@ const weatherMessage = async (message) => {
     const text = messageText(message);
     if (text.indexOf('天气') > -1) {
         const city = weatherCity(text);
+        console.log('得到的城市为：', city);
         const info = await weatherInfo(city);
-        await message.say(weatherText(info));
+        if (info.noInfo) {
+            await message.say(info.tip);
+        } else {
+            await message.say(weatherText(info));
+        }
         return true;
     }
     return false;
@@ -53,7 +58,7 @@ const weatherText = (info) => {
  */
 const weatherCity = (text) => {
     // 默认天气城市为：杭州
-    return text.split('的')[1] || '杭州';
+    return text.split('的')[0] || '杭州';
 }
 
 /**
@@ -77,6 +82,10 @@ const weatherInfo = async (city) => {
         };
     } else {
         console.log('获取天气失败');
+        result = {
+            noInfo: true,
+            tip: `未查询到${city}的天气信息，换个城市试试~~`,
+        };
     }
     return result;
 }

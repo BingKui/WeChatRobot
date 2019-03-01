@@ -7,7 +7,8 @@ const { messageText } = require('../tools/messageTools.js');
  * @param {String} text 消息内容
  */
 const poemState = (text) => {
-    const reg = new RegExp(`/首诗/g`);
+    const reg = /诗/g;
+    console.log('是否是诗句：', reg.test(text));
     return reg.test(text);
 }
 
@@ -15,10 +16,13 @@ const poemState = (text) => {
  * @description 获取一首随机的诗
  */
 const poemOne = async () => {
-    const poem = await Axios.get('https://wechat.uiseed.cn/poem');
+    const res = await Axios.get('https://wechat.uiseed.cn/poem');
+    console.log('返回结果为：', res.data);
+    const poem = res.data.poem;
     let result = '没有相关的诗句';
     if (poem) {
-        result = poem.paragraphs.join('\n');
+        console.log('获取到的诗为：', poem);
+        result = `${poem.title}-${poem.author}\n${poem.paragraphs.join('\n')}`;
     }
     return result;
 }
@@ -30,7 +34,7 @@ const poemOne = async () => {
  */
 const poemMessage = async (message) => {
     const text = messageText(message);
-    if (poemState(text)) {
+    if (/诗/g.test(text)) {
         const item = await poemOne();
         await message.say(item);
         return true;
