@@ -2,7 +2,9 @@ const mongoose = require('mongoose');
 const { mongoDB } = require('../config/config.js');
 
 // 链接数据库
-mongoose.connect(mongoDB);
+mongoose.connect(mongoDB, {
+    useNewUrlParser: true,
+});
 
 // 监听数据库事件
 const db = mongoose.connection;
