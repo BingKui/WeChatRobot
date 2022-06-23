@@ -23,8 +23,11 @@ const { isAutoChangeAvatar } = require('./config/config.js');
 // 引入数据库链接文件
 require('./tools/mongo.js');
 
+const name = 'wechat-puppet-wechat';
 // 实例化机器人对象
-const bot = Wechaty.instance();
+const bot = new Wechaty({
+    name,
+});
 
 // 全局对象，保存当前登录的用户
 let userSelf = null;
